@@ -155,3 +155,13 @@ body{
     border: none;
     color:#24842a;
 }
+
+/*Media Query*/
+@media screen and (max-width: 600px) {
+    .wrapper{
+        font-size: 14px;
+    }
+    .sub-container{
+        grid-template-columns: 1fr;
+    }
+}
