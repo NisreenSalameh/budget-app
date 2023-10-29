@@ -60,21 +60,19 @@ const modifyElement = (element, edit = false) => {
 
 
 //Function to create a list
-const listCreator = (expenseName, expensesValue) => {
+const listCreator = (expenseName, expenseValue) => {
     let sublistContent = document.createElement("div");
     sublistContent.classList.add("sublist-content", "flex-space");
     list.appendChild(sublistContent);
-    sublistContent.innerHTML = `<p class="product">$
-    {expensesName}</p><p class="amount">$
-    {expensesValue}</p>`;
+    sublistContent.innerHTML = `<p class="product">${expenseName}</p><p class="amount">${expenseValue}</p>`;
     let editButton = document.createElement("button");
-    editButton.classList.add("fa-solid fa-pen-to-square", "edit");
+    editButton.classList.add("fas", "fa-pen-to-square", "edit");
     editButton.style.fontSize = "24px";
     editButton.addEventListener("click", () => {
         modifyElement(editButton, true);
     });
     let deleteButton = document.createElement("button");
-    deleteButton.classList.add("fa-solid fa-trash", "delete");
+    deleteButton.classList.add("fas", "fa-trash", "delete");
     deleteButton.style.fontSize = "24px";
     deleteButton.addEventListener("click", () => {
         modifyElement(deleteButton);
@@ -94,16 +92,21 @@ checkAmountButton.addEventListener("click", () =>{
     }
     //enable buttons
     disableButtons(false);
+
     //expense
     let expenses = parseInt(userAmount.value);
+
     //total expense (existing + new)
     let sum =parseInt(expensesValue.innerText) + expenses;
     expensesValue.innerText = sum;
+
     //total balance (budget - total expense)
     const totalBalance = tempAmount - sum;
     balanceValue.innerText = totalBalance;
+
     //create list
     listCreator (productTitle.value, userAmount.value);
+
     //empty inputs
     productTitle.value = "";
     userAmount.value = "";
