@@ -108,9 +108,50 @@ body{
     border-radius: 0.6em;
 }
 
+.sublist-content{
+    width: 100%;
+    border-left: 0.3em solid #24842a;
+    margin-bottom: 0.6em;
+    padding: 0.5em 0;
+}
+
+.product {
+    font-weight: 500;
+    margin-left: 1.5em;
+    color:#363d55;
+}
+
+.amount{
+    color:#414a67;
+    margin-left: 20%;
+}
+
+.icon-container{
+    width: 5em;
+    margin: 1.2em;
+    align-items: center;
+}
+
+.product-title{
+    margin-bottom: 1em;
+}
+
 .hide{
     display:none;
 }
 .error{
     color: red;
+}
+
+.edit{
+    margin-left: auto;
+}
+
+.edit,
+.delete {
+    background: transparent;
+    cursor: pointer;
+    margin-right: 1.5em;
+    border: none;
+    color:#24842a;
 }
